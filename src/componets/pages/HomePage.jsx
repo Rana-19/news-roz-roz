@@ -10,7 +10,8 @@ const HomePage = () => {
   const { isDark } = useContext(ThemeContext)
 
   const getNews = async () => {
-    const newsData = await fetchNews("Indore")
+     const date = new Date().toJSON().slice(0, 10)
+    const newsData = await fetchNews("Indore",date)
 
     dispatch({
       type: "GET_NEWS",
